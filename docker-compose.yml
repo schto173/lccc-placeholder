@@ -1,0 +1,26 @@
+# LCCC coming-soon page for lccc.lu (while the new site is developed at beta.lccc.lu).
+# On the server: git clone this repo, cd into it, docker compose up -d
+# To update the page: git pull (no restart needed).
+services:
+  web:
+    image: nginx:alpine
+    container_name: lccc_placeholder
+    volumes:
+      - ./site:/usr/share/nginx/html:ro
+    restart: always
+    networks:
+      - traefik_default
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik_default"
+      - "traefik.http.routers.lccc-placeholder.rule=Host(`lccc.lu`) || Host(`www.lccc.lu`)"
+      - "traefik.http.routers.lccc-placeholder.entrypoints=websecure"
+      - "traefik.http.routers.lccc-placeholder.tls=true"
+      - "traefik.http.routers.lccc-placeholder.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.lccc-placeholder.tls.domains[0].main=lccc.lu"
+      - "traefik.http.routers.lccc-placeholder.tls.domains[0].sans=www.lccc.lu"
+      - "traefik.http.services.lccc-placeholder.loadbalancer.server.port=80"
+
+networks:
+  traefik_default:
+    external: true
