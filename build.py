@@ -202,6 +202,21 @@ page("index.html", "Home",
 
 <section class="section section-alt">
     <div class="container">
+        <p class="eyebrow">Look back</p>
+        <h2>How it was in 2026</h2>
+        <p class="lead">Impressions from our first edition. More photos and news on Instagram.</p>
+        <a class="photo-strip" href="{INSTAGRAM}" target="_blank" rel="noopener" aria-label="More photos on Instagram">
+            <img src="img/home/overview.jpg" alt="" loading="lazy" />
+            <img src="img/home/trading.jpg" alt="" loading="lazy" />
+            <img src="img/home/cards.jpg" alt="" loading="lazy" />
+            <img src="img/home/vendors2.jpg" alt="" loading="lazy" />
+            <span class="photo-strip-label">More on Instagram →</span>
+        </a>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
         <p class="eyebrow">Join in</p>
         <h2>Be part of LCCC 2027</h2>
         <div class="grid grid-2">
@@ -211,13 +226,13 @@ page("index.html", "Home",
     </div>
 </section>
 
-<section class="section">
+<section class="section section-alt">
     <div class="container">
         <p class="eyebrow">Stay in the loop</p>
         <h2>Follow us</h2>
         <p class="lead">News, vendors and giveaways first on our channels.</p>
         <div class="button-row" style="justify-content:flex-start">
-            <a class="btn btn-purple" href="{INSTAGRAM}" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn btn-purple" href="{INSTAGRAM}" target="_blank" rel="noopener">Instagram @lccc.tcg</a>
             <a class="btn btn-secondary" href="{DISCORD}" target="_blank" rel="noopener">Discord</a>
             <a class="btn btn-secondary" href="mailto:{EMAIL}">Email us</a>
         </div>
