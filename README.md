@@ -16,3 +16,25 @@ docker compose up -d
 ```
 
 Update the page later with `git pull` in that folder.
+
+## Vendor interest form
+
+`site/vendors.html` (the target of the flyer QR code, `flyer/`) has a short form: name, email, shop and one
+sentence about what they sell. The small `api` service saves sign-ups in `data/vendor-interest.json` on the
+server (not in git), emails each sign-up to `NOTIFY_TO` and sends the vendor a confirmation.
+
+Create a `.env` next to `docker-compose.yml` with the same mail settings as on beta:
+
+```sh
+NOTIFY_TO=royalfamilyeventing+web@gmail.com
+SMTP_HOST=smtp-relay.brevo.com
+SMTP_PORT=587
+SMTP_USER=xxxxxx@smtp-brevo.com
+SMTP_PASS=xsmtpsib-...
+MAIL_FROM=notifications@lccc.lu
+MAIL_FROM_VENDORS=vendors@lccc.lu
+MAIL_REPLY_TO=royalfamilyeventing+web@gmail.com
+```
+
+then `docker compose up -d`. To see all sign-ups: `cat data/vendor-interest.json`.
+The privacy note on the page promises to delete them after the vendor selection for LCCC 2027.

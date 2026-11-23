@@ -232,6 +232,87 @@ ol.steps strong {
     color: var(--muted);
 }
 
+.form {
+    display: grid;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.form label {
+    display: grid;
+    gap: 4px;
+    font-weight: 700;
+    font-size: 0.92rem;
+}
+
+.form small {
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.form input[type="text"],
+.form input[type="email"] {
+    font: inherit;
+    font-weight: 400;
+    color: var(--text);
+    background: var(--night);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 12px 14px;
+    width: 100%;
+}
+
+.form input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(242, 193, 78, 0.25);
+}
+
+.form .check {
+    grid-template-columns: 22px 1fr;
+    align-items: start;
+    font-weight: 400;
+    color: var(--muted);
+}
+
+.form .check input {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    accent-color: var(--gold);
+}
+
+.form .hp {
+    position: absolute;
+    left: -9999px;
+}
+
+.form .btn {
+    justify-self: start;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.form .btn:disabled {
+    opacity: 0.6;
+}
+
+.form-msg {
+    border-radius: 12px;
+    padding: 10px 14px;
+}
+
+.form-msg.is-ok {
+    background: rgba(31, 157, 85, 0.2);
+    border: 1px solid rgba(31, 157, 85, 0.6);
+}
+
+.form-msg.is-error {
+    background: rgba(229, 72, 77, 0.18);
+    border: 1px solid rgba(229, 72, 77, 0.6);
+}
+
 footer {
     margin-top: 40px;
     text-align: center;
