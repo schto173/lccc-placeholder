@@ -17,11 +17,11 @@ docker compose up -d
 
 Update the page later with `git pull` in that folder.
 
-## Vendor interest form
+## Vendor and sponsor forms
 
-`site/vendors.html` (the target of the flyer QR code, `flyer/`) has a short form: name, email, shop and one
-sentence about what they sell. The small `api` service saves sign-ups in `data/vendor-interest.json` on the
-server (not in git), emails each sign-up to `NOTIFY_TO` and sends the vendor a confirmation.
+`site/vendors.html` (the target of the flyer QR code, `flyer/`) and `site/sponsors.html` each have a short form.
+The small `api` service saves sign-ups in `data/vendor-interest.json` and `data/sponsor-interest.json` on the
+server (not in git), emails each sign-up to `NOTIFY_TO` and sends the person a confirmation.
 
 Create a `.env` next to `docker-compose.yml` with the same mail settings as on beta:
 
@@ -36,5 +36,6 @@ MAIL_FROM_VENDORS=vendors@lccc.lu
 MAIL_REPLY_TO=royalfamilyeventing+web@gmail.com
 ```
 
-then `docker compose up -d`. To see all sign-ups: `cat data/vendor-interest.json`.
-The privacy note on the page promises to delete them after the vendor selection for LCCC 2027.
+then `docker compose up -d`. To see all sign-ups: `cat data/vendor-interest.json data/sponsor-interest.json`.
+The privacy page (`site/privacy.html`) promises to delete them after the vendor selection and sponsor
+planning for LCCC 2027.
